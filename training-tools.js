@@ -1,0 +1,66 @@
+/* Workout conveniences layered over the server-backed routine screen. */
+(() => {
+  const tokenKey = 'formaia-api-token';
+  const apiUrl = window.FORMAIA_API_URL?.replace(/\/$/, '');
+  if (!apiUrl) return;
+  const user = () => window.FormaIAClientSession?.user?.() || null;
+  const saveUser = patch => window.FormaIAClientSession?.patchUser?.(patch);
+  const notify = message => { const toast = document.querySelector('#toast'); if (!toast) return; toast.textContent = message; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 3200); };
+  const api = async (path, options = {}) => { const response = await fetch(`${apiUrl}${path}`, { ...options, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${sessionStorage.getItem(tokenKey)}`, ...(options.headers || {}) } }); const payload = await response.json().catch(() => ({})); if (!response.ok) throw Error(payload.error || 'No fue posible procesar la solicitud.'); return payload; };
+  const mapPlan = plan => !plan ? null : ({ id: plan.id, calories: plan.calories, protein: plan.protein, carbs: plan.carbs, fats: plan.fats, message: plan.message, adjustment: plan.adjustment || null, cycle: plan.cycle || null, target: plan.workouts.length, workouts: plan.workouts.map(item => ({ id: item.id, title: item.title, subtitle: item.subtitle, minutes: `${item.duration_minutes} minutos`, scheduledOn: item.scheduledOn || item.scheduled_on || null, exercises: item.exercises || [] })), meals: plan.meals.map(item => [({ Desayuno: '🥣', Almuerzo: '🍗', Merienda: '🍍', Cena: '🫓' }[item.meal_type] || '🍽️'), item.meal_type, item.title, item.description, item.calories, item.recipe || null, { id: item.id, completedAt: item.completed_at || null, completedOn: item.completed_on || null, scheduledOn: item.scheduled_on || null, isToday: Boolean(item.is_today) }]) });
+  const today = () => new Date().toISOString().slice(0, 10);
+  const activeWorkout = () => { const workouts = user()?.plan?.workouts || []; const scheduled = workouts.find(item => item.scheduledOn === today()); if (scheduled) return scheduled; const title = document.querySelector('.detail-head h1')?.textContent?.trim(); return workouts.find(item => item.title === title) || null; };
+  const format = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+  let restState = null;
+  const readRest = () => restState;
+  const clearRest = () => { restState = null; document.querySelector('.rest-timer')?.remove(); };
+  const renderRest = () => { const saved = readRest(), widget = document.querySelector('.rest-timer'); if (!saved) return widget?.remove(); const left = saved.running ? Math.max(0, Math.ceil((saved.endsAt - Date.now()) / 1000)) : Math.max(0, saved.remaining || 0); if (saved.running && !left) { clearRest(); notify('Descanso terminado. Cuando estés listo, continúa con la siguiente serie.'); return; } const node = widget || document.body.appendChild(Object.assign(document.createElement('aside'), { className: 'rest-timer' })); node.innerHTML = `<span>Descanso entre series</span><b>${format(left)}</b><div><button class="btn outline" data-rest="${saved.running ? 'pause' : 'resume'}">${saved.running ? 'Pausar' : 'Reanudar'}</button><button class="rest-skip" data-rest="skip">Saltar</button></div>`; };
+  const startRest = seconds => { restState = { running: true, endsAt: Date.now() + seconds * 1000, remaining: seconds }; renderRest(); };
+  const restFor = exercise => { const match = (exercise?.querySelector('p')?.textContent || '').match(/descanso\s*(\d+)\s*(min|s)/i); return match ? Number(match[1]) * (match[2].toLowerCase() === 'min' ? 60 : 1) : 90; };
+  window.setInterval(renderRest, 500);
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+  const safeMediaUrl = value => {
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+    try {
+      const url = new URL(raw, window.location.href);
+      return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+    } catch { return ''; }
+  };
+  const exerciseDetails = exercise => Array.isArray(exercise) ? exercise[3] || {} : exercise?.media || exercise || {};
+
+  const records = () => { const routine = activeWorkout(), names = new Set((routine?.exercises || []).map(item => Array.isArray(item) ? item[0] : item?.name)); const items = (user()?.personalRecords || []).filter(item => names.has(item.exercise)).slice(0, 4); return `<section class="training-records"><span class="eyebrow">Récords personales</span>${items.length ? `<div>${items.map(item => `<article><b>${item.exercise}</b><small>🏋 ${item.maxWeightLb ?? '—'} lb · ↻ ${item.maxRepetitions ?? '—'} reps · ◇ ${Math.round(item.maxVolumeLb || 0).toLocaleString('es-HN')} lb volumen</small></article>`).join('')}</div>` : '<p>Registra peso y repeticiones para desbloquear tus mejores marcas.</p>'}</section>`; };
+  const inject = () => { const list = document.querySelector('.exercise-list'); if (list) { if (!list.previousElementSibling?.classList.contains('training-records')) list.insertAdjacentHTML('beforebegin', records()); [...list.querySelectorAll('.exercise')].forEach((exercise, index) => { const target = exercise.querySelector('div'); if (!exercise.querySelector('[data-training-actions]')) { target?.querySelectorAll('[data-training-demo],[data-training-substitute]').forEach(button => button.remove()); target?.insertAdjacentHTML('beforeend', `<div class="exercise-actions" data-training-actions><button class="exercise-action exercise-action-primary" data-training-demo="${index}" aria-haspopup="dialog"><span aria-hidden="true">◉</span> Ver técnica</button><button class="exercise-action" data-training-substitute="${index}"><span aria-hidden="true">↻</span> Cambiar</button></div>`); } }); const head = document.querySelector('.detail-head'); if (head && !head.querySelector('[data-training-calendar]')) head.insertAdjacentHTML('beforeend', '<button class="btn outline training-calendar-button" data-training-calendar>Calendario</button>'); }
+    const workoutCard = document.querySelector('.workout-card'); if (workoutCard && !workoutCard.querySelector('[data-training-calendar]')) workoutCard.insertAdjacentHTML('beforeend', '<button class="btn outline training-calendar-dashboard" data-training-calendar>Calendario de rutinas</button>'); };
+  const dialog = markup => { document.querySelector('.training-dialog-backdrop')?.remove(); const node = document.createElement('div'); node.className = 'training-dialog-backdrop'; node.innerHTML = `<section class="training-dialog" role="dialog" aria-modal="true">${markup}</section>`; node.addEventListener('click', event => { if (event.target === node || event.target.closest('[data-training-close]')) node.remove(); }); document.body.append(node); };
+  const openSubstitute = index => { const routine = activeWorkout(), exercise = routine?.exercises?.[index]; if (!routine || !exercise) return notify('No se encontró la rutina actual.'); const name = Array.isArray(exercise) ? exercise[0] : exercise.name; dialog(`<button class="dialog-close" data-training-close aria-label="Cerrar">×</button><span class="eyebrow">Sustituir ejercicio</span><h2>${name}</h2><p>Elegiremos una alternativa del catálogo con el mismo enfoque. Si sientes dolor, detén el ejercicio y consulta a un profesional.</p><label class="field">Motivo<select data-substitution-reason><option value="equipo">No tengo ese equipo</option><option value="ocupado">Equipo ocupado</option><option value="lesion">Molestia o limitación registrada</option></select></label><button class="btn lime full" data-confirm-substitute="${index}">Buscar alternativa</button>`); };
+  const openTechnique = index => {
+    const routine = activeWorkout(), exercise = routine?.exercises?.[index];
+    if (!routine || !exercise) return notify('No se encontró el ejercicio de esta rutina.');
+    const name = Array.isArray(exercise) ? exercise[0] : exercise.name;
+    const details = exerciseDetails(exercise);
+    const imageUrl = safeMediaUrl(details.imageUrl || details.image_url);
+    const videoUrl = safeMediaUrl(details.videoUrl || details.video_url);
+    const cues = Array.isArray(details.cues) ? details.cues.filter(Boolean) : [];
+    const playableVideo = /\.(mp4|webm)(?:[?#]|$)/i.test(videoUrl);
+    const visual = [
+      imageUrl ? `<img class="training-demo-image" src="${escapeHtml(imageUrl)}" alt="Demostración de ${escapeHtml(name)}">` : '',
+      videoUrl && playableVideo ? `<video class="training-demo-video" controls preload="metadata"><source src="${escapeHtml(videoUrl)}">Tu navegador no puede reproducir este video.</video>` : '',
+      videoUrl && !playableVideo ? `<a class="exercise-demo" href="${escapeHtml(videoUrl)}" target="_blank" rel="noopener">Abrir video de demostración</a>` : ''
+    ].join('');
+    const guide = cues.length ? `<ul class="training-demo-cues">${cues.map(cue => `<li>${escapeHtml(cue)}</li>`).join('')}</ul>` : '<p class="training-demo-empty">Aún no hay indicaciones técnicas para este ejercicio.</p>';
+    const unavailable = visual ? '' : '<p class="training-demo-empty">Todavía no hay imagen o video cargado. Usa estas indicaciones como guía o pide al administrador que agregue una demostración.</p>';
+    dialog(`<button class="dialog-close" data-training-close aria-label="Cerrar">×</button><span class="eyebrow">Guía del ejercicio</span><h2>${escapeHtml(name)}</h2>${visual}${unavailable}<h3>Claves de ejecución</h3>${guide}`);
+  };
+  const openCalendar = () => { const workouts = user()?.plan?.workouts || []; if (!workouts.length) return; dialog(`<button class="dialog-close" data-training-close aria-label="Cerrar">×</button><span class="eyebrow">Calendario del ciclo</span><h2>Mover una rutina</h2><p>Elige una fecha futura. La rutina deja de aparecer en su día habitual durante este ciclo.</p><div class="field-grid"><label class="field full">Rutina<select data-schedule-workout>${workouts.map(item => `<option value="${item.id}">${item.title}${item.scheduledOn ? ` · ${item.scheduledOn}` : ''}</option>`).join('')}</select></label><label class="field full">Nueva fecha<input data-schedule-date type="date" min="${today()}" value="${today()}"></label></div><button class="btn lime full" data-confirm-schedule>Guardar en calendario</button>`); };
+  document.addEventListener('click', async event => {
+    const rest = event.target.closest('[data-rest]'); if (rest) { const state = readRest(); if (!state) return; if (rest.dataset.rest === 'skip') return clearRest(); if (rest.dataset.rest === 'pause') { state.remaining = Math.max(0, Math.ceil((state.endsAt - Date.now()) / 1000)); state.running = false; } else { state.running = true; state.endsAt = Date.now() + Number(state.remaining || 0) * 1000; } restState = state; return renderRest(); }
+    const saveSet = event.target.closest('[data-action="save-set"]'); if (saveSet) { const row = saveSet.closest('[data-set-row]'); if (row?.querySelector('[data-set-weight]')?.value || row?.querySelector('[data-set-repetitions]')?.value || row?.querySelector('[data-set-duration]')?.value) setTimeout(() => startRest(restFor(saveSet.closest('.exercise'))), 250); }
+    const demo = event.target.closest('[data-training-demo]'); if (demo) return openTechnique(Number(demo.dataset.trainingDemo));
+    const substitute = event.target.closest('[data-training-substitute]'); if (substitute) return openSubstitute(Number(substitute.dataset.trainingSubstitute));
+    if (event.target.closest('[data-training-calendar]')) return openCalendar();
+    const replace = event.target.closest('[data-confirm-substitute]'); if (replace) { const routine = activeWorkout(); replace.disabled = true; replace.textContent = 'Buscando alternativa…'; try { const result = await api(`/api/workouts/${routine.id}/substitute`, { method: 'POST', body: JSON.stringify({ exerciseIndex: Number(replace.dataset.confirmSubstitute), reason: document.querySelector('[data-substitution-reason]')?.value }) }); saveUser({ plan: mapPlan(result.plan) }); document.querySelector('.training-dialog-backdrop')?.remove(); notify(`${result.replacement.name} fue añadido a tu rutina.`); } catch (error) { replace.disabled = false; replace.textContent = 'Buscar alternativa'; notify(error.message); } return; }
+    const schedule = event.target.closest('[data-confirm-schedule]'); if (schedule) { const workoutId = document.querySelector('[data-schedule-workout]')?.value, scheduledOn = document.querySelector('[data-schedule-date]')?.value; if (!workoutId || !scheduledOn) return notify('Elige una rutina y una fecha.'); schedule.disabled = true; schedule.textContent = 'Guardando…'; try { const result = await api(`/api/workouts/${workoutId}/schedule`, { method: 'PUT', body: JSON.stringify({ scheduledOn }) }); saveUser({ plan: mapPlan(result.plan) }); document.querySelector('.training-dialog-backdrop')?.remove(); notify('Rutina movida en el calendario.'); } catch (error) { schedule.disabled = false; schedule.textContent = 'Guardar en calendario'; notify(error.message); } }
+  }, true);
+  new MutationObserver(inject).observe(document.querySelector('#app'), { childList: true, subtree: true }); inject();
+})();

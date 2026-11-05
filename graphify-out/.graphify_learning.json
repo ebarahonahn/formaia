@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-11-05T10:50:00.247729+00:00",
+  "nodes": {
+    "app_v2_planai": {
+      "code_fingerprint": "696998c478c90af85219e53ba87c6e35320b7ecbf7e312b95525799aa3256481",
+      "label": "PlanAI",
+      "last": "2026-10-18T12:02:37.564267+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-18T12:02:37.564267+00:00",
+          "outcome": "useful",
+          "q": "cuanto crees que costaria esta app en dolares trabaja en dos venta de la app a un gym o por suscripcion"
+        }
+      ],
+      "score": 0.660523165,
+      "source_file": "app-v2.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "app_v3_admin": {
+      "code_fingerprint": "390ee9762717af5264553f346732b3e0e2611eba83e10443ad1d1adffd492af1",
+      "label": "admin()",
+      "last": "2026-10-29T10:33:18.777504+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-29T10:33:18.777504+00:00",
+          "outcome": "useful",
+          "q": "analiza que podemos hacer para llevar el control de pago y acceso a la app y a la sucursal"
+        }
+      ],
+      "score": 0.850439373,
+      "source_file": "app-v3.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "backend_src_services_catalog_workout_service": {
+      "code_fingerprint": "ea97733900805b80f2da7fb4ff89f148b0d37639abf73f9d643237c87935610a",
+      "label": "catalog-workout-service.js",
+      "last": "2026-10-27T08:13:04.754317+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-27T08:13:04.754317+00:00",
+          "outcome": "useful",
+          "q": "si quisiera hacerlo para un gimnasio que cambios a nivel de datos sugieres, el catalogo de rutinas debería de asociarse a una sucursal ya que en cada sucursal puede haber maquinas de ejercicios diferentes"
+        }
+      ],
+      "score": 0.810209822,
+      "source_file": "backend/src/services/catalog-workout-service.js",
+      "status": "tentative",
+      "uses": 1
+    },
+    "session_guard": {
+      "code_fingerprint": "c70334f221652263baa68221dfa0a9b41f8b578a6098c821ec5c51814858cc78",
+      "label": "session-guard.js",
+      "last": "2026-10-29T10:33:18.777504+00:00",
+      "provenance": [
+        {
+          "date": "2026-10-29T10:33:18.777504+00:00",
+          "outcome": "useful",
+          "q": "analiza que podemos hacer para llevar el control de pago y acceso a la app y a la sucursal"
+        },
+        {
+          "date": "2026-10-26T09:51:48.090035+00:00",
+          "outcome": "useful",
+          "q": "analiza que cambiarias si la app se utiliza en un gimnacio?"
+        }
+      ],
+      "score": 1.643399036,
+      "source_file": "session-guard.js",
+      "status": "preferred",
+      "uses": 2
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,159 @@
+/* Superficies y contrastes que usan colores locales en vez de variables. */
+html[data-theme="dark"] { color-scheme:dark; --dark-surface:#1c302a; --dark-surface-raised:#243e36; --dark-surface-soft:#2a4b40; --dark-text:#e8f5ee; --dark-text-muted:#b8d0c5; }
+html[data-theme="dark"] .notice { background:#4a332d; color:#ffe1d7; border:1px solid #71483d; }
+html[data-theme="dark"] .completion-note,html[data-theme="dark"] .goal-summary,html[data-theme="dark"] .advance-card,html[data-theme="dark"] .nutrition-card,html[data-theme="dark"] .food-equivalences { background:var(--dark-surface-raised); color:var(--dark-text); border-color:#42675b; }
+html[data-theme="dark"] .daily-nudge { background:#263f36; border-color:#47695e; color:var(--dark-text); }
+html[data-theme="dark"] .daily-nudge p { color:var(--dark-text-muted); }
+html[data-theme="dark"] .daily-nudge b { color:var(--dark-text); }
+html[data-theme="dark"] .food-note { background:#49352e; color:#ffe1d7; border:1px solid #6e4a40; }
+html[data-theme="dark"] .completion-note *,html[data-theme="dark"] .goal-summary *,html[data-theme="dark"] .nutrition-card *,html[data-theme="dark"] .food-equivalences * { color:inherit; }
+html[data-theme="dark"] .profile-data span,html[data-theme="dark"] .choice,html[data-theme="dark"] .choice.selected { background:var(--dark-surface-raised); color:var(--dark-text); border-color:#42675b; }
+html[data-theme="dark"] .choice.selected { outline-color:var(--lime-dark); }
+html[data-theme="dark"] .choice span,html[data-theme="dark"] .profile-data span { color:var(--dark-text-muted); }
+html[data-theme="dark"] .profile-data b { color:var(--dark-text); }
+/* Las notas y tarjetas del historial tienen fondo propio en el tema claro.
+   Estas variantes evitan texto claro sobre fondos claros al activar oscuro. */
+html[data-theme="dark"] .profile-limitations { background:#4a332d; border:1px solid #71483d; color:#ffe1d7; }
+html[data-theme="dark"] .profile-limitations b { color:#fff5ef; }
+html[data-theme="dark"] .profile-branch { background:#294c3d; border-color:#638854; color:var(--dark-text); }
+html[data-theme="dark"] .profile-branch h3 { color:#f4fff8; }
+html[data-theme="dark"] .profile-branch p,html[data-theme="dark"] .profile-branch label,html[data-theme="dark"] .profile-branch small { color:var(--dark-text-muted); }
+html[data-theme="dark"] .profile-branch select { background:#203831; border-color:#638854; color:#f4fff8; }
+html[data-theme="dark"] .profile-branch .eyebrow { color:#ff8d7a; }
+html[data-theme="dark"] .plan-history-card { background:var(--dark-surface); border-color:#42675b; color:var(--dark-text); }
+html[data-theme="dark"] .plan-history-card.is-active { background:#294c3d; border-color:#9ac949; }
+html[data-theme="dark"] .plan-history-card h3,html[data-theme="dark"] .plan-history-card .history-kcal,html[data-theme="dark"] .plan-history-card .history-macros b { color:#f4fff8; }
+html[data-theme="dark"] .plan-history-card .history-kcal small,html[data-theme="dark"] .plan-history-card .history-macros,html[data-theme="dark"] .plan-history-card .history-details { color:var(--dark-text-muted); }
+html[data-theme="dark"] .plan-history-card .history-status { background:#315246; color:#edf9f1; }
+html[data-theme="dark"] .plan-history-card .history-status.active { background:#bce86d; color:#143d34; }
+html[data-theme="dark"] .plan-history-card .history-adjustment { background:#4a332d; border:1px solid #71483d; color:#ffe1d7; }
+html[data-theme="dark"] .plan-history-card .history-adjustment b { color:#fff5ef; }
+html[data-theme="dark"] .meal:nth-child(4n + 2) { background:#3c322d; }
+html[data-theme="dark"] .meal:nth-child(4n + 3) { background:#294437; }
+html[data-theme="dark"] .meal-completed-badge { background:#bce86d; color:#143d34; border:1px solid #d9f4a3; }
+html[data-theme="dark"] .food-equivalences span { background:#345544; color:#f4fff8; border:1px solid #557b51; }
+html[data-theme="dark"] .food-equivalences span b { color:#f4fff8; }
+html[data-theme="dark"] .recipe-link { color:#d5f8b2; }
+html[data-theme="dark"] .recipe-link:hover { color:#ffd0c7; }
+html[data-theme="dark"] .workout-card,html[data-theme="dark"] .target-card,html[data-theme="dark"] .weekly-summary { background:#173a31; color:#f4fff8; }
+html[data-theme="dark"] .btn:not(.lime):not(.coral) { background:#315f50; color:#f5fff8; }
+html[data-theme="dark"] .btn:not(.lime):not(.coral):hover { background:#3c705e; }
+html[data-theme="dark"] .btn.outline { background:transparent; color:var(--dark-text); border-color:#a9cabd; }
+html[data-theme="dark"] .btn:disabled { background:#3a514a; color:#b4c8bf; border-color:#50685f; opacity:1; }
+html[data-theme="dark"] .advance-card h3 { color:var(--dark-text); }
+html[data-theme="dark"] .advance-card p { color:var(--dark-text-muted); }
+html[data-theme="dark"] .workout-card .card-label,html[data-theme="dark"] .workout-meta,html[data-theme="dark"] .target-card .card-label,html[data-theme="dark"] .target-card p,html[data-theme="dark"] .weekly-summary p { color:#c4dbd1; }
+html[data-theme="dark"] .weekly-summary .eyebrow { color:var(--lime); }
+html[data-theme="dark"] .weekly-summary-stats span { background:#254b40; color:#d2e8de; }
+html[data-theme="dark"] .weekly-summary-stats b { color:#fff; }
+html[data-theme="dark"] .performance-count { background:#315246; color:#edf9f1; border:1px solid #52776a; }
+html[data-theme="dark"] .workout-timer { background:#243e36; border-color:#42675b; }
+html[data-theme="dark"] .workout-timer.is-running { background:#294c3d; border-color:#9ac949; }
+html[data-theme="dark"] .workout-timer b { color:var(--lime); }
+html[data-theme="dark"] .training-records,html[data-theme="dark"] .rest-timer { background:#263f36; border-color:#557b51; color:var(--dark-text); }
+html[data-theme="dark"] .training-records article { background:#315246; }
+html[data-theme="dark"] .training-records p,html[data-theme="dark"] .training-records small,html[data-theme="dark"] .rest-timer span { color:var(--dark-text-muted); }
+html[data-theme="dark"] .rest-timer b,html[data-theme="dark"] .rest-skip { color:var(--dark-text); }
+html[data-theme="dark"] .set-row { background:#263f36; }
+html[data-theme="dark"] .set-row.is-saved { background:#345544; }
+html[data-theme="dark"] .set-row b,html[data-theme="dark"] .set-tracker > p { color:var(--dark-text); }
+html[data-theme="dark"] .set-row label { color:var(--dark-text-muted); }
+html[data-theme="dark"] .set-save { background:#315246; border-color:#8dbb88; color:#f3fff6; }
+html[data-theme="dark"] .set-row.is-saved .set-save { color:#143d34; }
+html[data-theme="dark"] .achievement-list>div { background:#263d35; color:#bdcec5; opacity:1; }
+html[data-theme="dark"] .achievement-list>div.unlocked { background:#315342; color:#f5fff8; }
+html[data-theme="dark"] .achievement-list i { background:#3e544c; color:#b8d0c5; }
+html[data-theme="dark"] .achievement-list .unlocked i { background:var(--lime); color:#143d34; }
+html[data-theme="dark"] .achievement-list small { color:#b8d0c5; }
+html[data-theme="dark"] .measurement-insight { background:#29463b; color:var(--dark-text); }
+html[data-theme="dark"] .measurement-insight span,html[data-theme="dark"] .insight-empty { color:var(--dark-text-muted); }
+html[data-theme="dark"] .insight-empty { background:#263f36; border:1px dashed #527669; }
+html[data-theme="dark"] .mini-progress,html[data-theme="dark"] .macro-bar i,html[data-theme="dark"] .progress-line { background:#3b594e; }
+html[data-theme="dark"] .admin-summary article { background:#29463b; color:var(--dark-text); }
+html[data-theme="dark"] .admin-tabs { background:#263f36; }
+html[data-theme="dark"] .admin-state.active,html[data-theme="dark"] .admin-role.admin { background:#bce86d; color:#143d34; }
+html[data-theme="dark"] .recipe-sheet,html[data-theme="dark"] .training-dialog,html[data-theme="dark"] .account-security-dialog { background:var(--dark-surface); color:var(--dark-text); }
+html[data-theme="dark"] .modal-close,html[data-theme="dark"] .dialog-close,html[data-theme="dark"] .account-security-close { background:#315246; color:var(--dark-text); }
+html[data-theme="dark"] .account-security-dialog p,html[data-theme="dark"] .account-security-dialog label { color:var(--dark-text-muted); }
+html[data-theme="dark"] .chip { background:#263f36; color:var(--dark-text-muted); }
+html[data-theme="dark"] input,html[data-theme="dark"] select,html[data-theme="dark"] option,html[data-theme="dark"] textarea { background:#203831; color:var(--dark-text); border-color:#47695e; }
+html[data-theme="dark"] .admin-meal-form { background:#263f36; border-color:#557b51; }
+html[data-theme="dark"] .admin-food-form { background:#263f36; border-color:#557b51; }
+html[data-theme="dark"] .admin-table-controls input,html[data-theme="dark"] .admin-table-controls select { background:#203831; color:var(--dark-text); border-color:#47695e; } html[data-theme="dark"] .admin-table-pager button { color:var(--dark-text); border-color:#6b9b74; }
+html[data-theme="dark"] .admin-recipe-calculator { background:#28463a; border-color:#638854; } html[data-theme="dark"] .admin-calculator-totals,html[data-theme="dark"] .admin-calculator-list>div { background:#203831; color:var(--dark-text); border-color:#47695e; }
+html[data-theme="dark"] .admin-meal-toggle { color:var(--dark-text)!important; }
+html[data-theme="dark"] .admin-form-close { background:#315246; color:var(--dark-text); }
+html[data-theme="dark"] input::placeholder { color:#9db8ac; }
+html[data-theme="dark"] input[type="checkbox"] { accent-color:var(--lime); }
+html[data-theme="dark"] .toast { background:#d9f4e8; color:#143d34; }
+html[data-theme="dark"] .daily-pass-card { background:#263f36; border-color:#638854; color:var(--dark-text); }
+html[data-theme="dark"] .daily-pass-card h3 { color:#f4fff8; }
+html[data-theme="dark"] .daily-pass-card p,
+html[data-theme="dark"] .daily-pass-card label,
+html[data-theme="dark"] .daily-pass-card small { color:#c3d8cf; }
+html[data-theme="dark"] .daily-pass-card .eyebrow { color:#ff9b89; }
+html[data-theme="dark"] .daily-pass-card .daily-pass-error { color:#ffd0c7!important; }
+html[data-theme="dark"] .member-qr-close { background:#315246; color:#f4fff8; border:1px solid #638854; }
+html[data-theme="dark"] .member-qr-close:hover,
+html[data-theme="dark"] .member-qr-close:focus-visible { background:#bce86d; color:#143d34; border-color:#d9f4a3; outline:2px solid rgba(188,232,109,.38); outline-offset:2px; }
+
+/* Confirmación de revisión semanal: evita texto claro sobre superficies claras. */
+html[data-theme="dark"] .plan-review-confirmation { background:rgba(4,20,16,.72); }
+html[data-theme="dark"] .plan-review-dialog {
+  background:var(--dark-surface);
+  border-color:#638854;
+  color:var(--dark-text);
+}
+html[data-theme="dark"] .plan-review-dialog h2 { color:#f4fff8; }
+html[data-theme="dark"] .plan-review-dialog p { color:var(--dark-text-muted); }
+html[data-theme="dark"] .plan-review-dialog .eyebrow { color:#ff8d7a; }
+html[data-theme="dark"] .plan-review-note {
+  background:#345544;
+  border:1px solid #638854;
+  color:#f4fff8!important;
+}
+html[data-theme="dark"] .plan-review-icon { background:#4a332d; color:#ffd0c7; }
+html[data-theme="dark"] .plan-review-close { background:#315246; color:#f4fff8; }
+html[data-theme="dark"] .plan-review-close:hover { background:#bce86d; color:#143d34; }
+html[data-theme="dark"] .plan-review-actions .btn.outline { color:#f4fff8; border-color:#a9cabd; }
+
+/* Etiquetas emergentes de las barras: --forest es claro en tema oscuro. */
+html[data-theme="dark"] .insight-bars i span {
+  background:#203831;
+  color:#f4fff8;
+  border:1px solid #638854;
+  box-shadow:0 5px 12px rgba(0,0,0,.28);
+}
+
+/* Paneles de nutrición insertados dinámicamente. */
+html[data-theme="dark"] .nutrition-sheet { background:rgba(3,20,15,.72); }
+html[data-theme="dark"] .nutrition-sheet-card { background:#1d352d; color:#f4fff8; border:1px solid #47695e; }
+html[data-theme="dark"] .nutrition-sheet h2,
+html[data-theme="dark"] .nutrition-sheet h3 { color:#f4fff8; }
+html[data-theme="dark"] .nutrition-sheet-card>p,
+html[data-theme="dark"] .sheet-meta,
+html[data-theme="dark"] .shopping-budget small,
+html[data-theme="dark"] .adherence-box small,
+html[data-theme="dark"] .water-counter small { color:#c3d8cf; }
+html[data-theme="dark"] .sheet-close { background:#315246; color:#f4fff8; }
+html[data-theme="dark"] .recipe-columns section { background:#263f36; border:1px solid #47695e; }
+html[data-theme="dark"] .recipe-substitutions { background:#345544; border:1px solid #638854; }
+html[data-theme="dark"] .recipe-columns ul,
+html[data-theme="dark"] .recipe-columns ol,
+html[data-theme="dark"] .recipe-substitutions ul { color:#e3f1eb; }
+html[data-theme="dark"] .chart-empty { background:#263f36; border-color:#527669; color:#c3d8cf; }
+html[data-theme="dark"] .chart-empty span { color:#bce86d; }
+html[data-theme="dark"] .password-toggle { color:#d5f8b2; }html[data-theme="dark"] .password-toggle:hover,html[data-theme="dark"] .password-toggle:focus-visible { background:#315246; }
+html[data-theme="dark"] .password-generate { border-color:#a6d86b; color:#d5f8b2; }html[data-theme="dark"] .password-generate:hover,html[data-theme="dark"] .password-generate:focus-visible { background:#315246; outline-color:#c2ef57; }
+html[data-theme="dark"] .password-strength { border-color:#527669; background:#1b362d; }html[data-theme="dark"] .password-strength>div,html[data-theme="dark"] .password-strength ul { color:#b7ccc3; }html[data-theme="dark"] .password-strength b { color:#ffb5a8; }html[data-theme="dark"] .password-strength li.is-met { color:#d5f8b2; }html[data-theme="dark"] .password-strength>i span { background:#36574b; }html[data-theme="dark"] .password-strength[data-state="good"] b,html[data-theme="dark"] .password-strength[data-state="strong"] b { color:#c2ef57; }
+html[data-theme="dark"] .avatar { border:2px solid #638854; background:linear-gradient(145deg,#d7fb66,#a9df4e); color:#143d34!important; box-shadow:0 5px 15px rgba(0,0,0,.3); font-weight:800; }
+html[data-theme="dark"] .avatar:hover,html[data-theme="dark"] .avatar:focus-visible { border-color:#f4fff8; background:#f4fff8; color:#143d34!important; outline:0; box-shadow:0 0 0 3px rgba(188,232,109,.3),0 5px 15px rgba(0,0,0,.3); }
+
+html[data-theme="dark"] .reception-payment-form { background:#263f36; border-color:#638854; color:var(--dark-text); }
+html[data-theme="dark"] .reception-payment-form p,
+html[data-theme="dark"] .reception-payment-form label { color:#c3d8cf; }
+html[data-theme="dark"] .reception-payment-customer { background:#203831; border-color:#557b51; }
+html[data-theme="dark"] .reception-payment-customer b { color:#f4fff8; }
+html[data-theme="dark"] .reception-payment-customer span,
+html[data-theme="dark"] .reception-payment-customer small { color:#c3d8cf; }
+html[data-theme="dark"] .payment-import-form { background:#203831; border-color:#638854; } html[data-theme="dark"] .payment-import-form label,html[data-theme="dark"] .payment-import-form small { color:#c3d8cf; } html[data-theme="dark"] .payment-import-result { background:#294c3d; border-color:#638854; color:#f4fff8; } html[data-theme="dark"] .payment-import-block code { background:#315246; color:#d5f8b2; }

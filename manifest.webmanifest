@@ -1,0 +1,13 @@
+{
+  "name": "FormaIA",
+  "short_name": "FormaIA",
+  "description": "Tu entrenador personal y plan de alimentación.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f0e5",
+  "theme_color": "#143d34",
+  "lang": "es-HN",
+  "icons": [
+    { "src": "formaia-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

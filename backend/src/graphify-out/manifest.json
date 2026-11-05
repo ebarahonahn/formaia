@@ -1,0 +1,26 @@
+{
+  "server.js": {
+    "mtime": 1791635264.769398,
+    "seen": 1791635688.6031327,
+    "ast_hash": "79b93f130980fb8bf2b2e7f0c5ef5c18",
+    "semantic_hash": "79b93f130980fb8bf2b2e7f0c5ef5c18"
+  },
+  "services/catalog-workout-service.js": {
+    "mtime": 1791635355.4063315,
+    "seen": 1791635688.603137,
+    "ast_hash": "4a704066a3ab4dbe0a5fa5dcb0e5dece",
+    "semantic_hash": "4a704066a3ab4dbe0a5fa5dcb0e5dece"
+  },
+  "services/weekly-menu-service.js": {
+    "mtime": 1791628250.7225406,
+    "seen": 1791634205.336716,
+    "ast_hash": "1875e53cdccc89b08e7b2ffeabe02d1f",
+    "semantic_hash": "1875e53cdccc89b08e7b2ffeabe02d1f"
+  },
+  "services/plan-adjustment-service.js": {
+    "mtime": 1791635579.8507764,
+    "seen": 1791635688.6031384,
+    "ast_hash": "fb1e8e6117bd66b3d299a7062f883c5d",
+    "semantic_hash": "fb1e8e6117bd66b3d299a7062f883c5d"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "account-security.js": {
+    "mtime": 1791757154.0140197,
+    "seen": 1791757365.3645558,
+    "ast_hash": "0f06e61312d16e1eb53edeac6a026fee",
+    "semantic_hash": "0f06e61312d16e1eb53edeac6a026fee"
+  },
+  "admin-confirm-dialog-style.js": {
+    "mtime": 1791720737.001316,
+    "seen": 1791756870.7658768,
+    "ast_hash": "61e59935632b8ea769de58d23affb67b",
+    "semantic_hash": "61e59935632b8ea769de58d23affb67b"
+  },
+  "admin-panel.js": {
+    "mtime": 1791756576.1582444,
+    "seen": 1791756870.7658782,
+    "ast_hash": "8c31429f94008daa9a25309c325ee267",
+    "semantic_hash": "8c31429f94008daa9a25309c325ee267"
+  },
+  "app-v2.js": {
+    "mtime": 1791545573.1812065,
+    "seen": 1791756870.7658792,
+    "ast_hash": "4527a84bbe45de5d2b0fe7100b8ea231",
+    "semantic_hash": "4527a84bbe45de5d2b0fe7100b8ea231"
+  },
+  "app-v3.js": {
+    "mtime": 1791757273.3872304,
+    "seen": 1791757365.3651106,
+    "ast_hash": "a9825ce05a3160f5287c2b0364a0b2e1",
+    "semantic_hash": "a9825ce05a3160f5287c2b0364a0b2e1"
+  },
+  "app.js": {
+    "mtime": 1791544457.9889307,
+    "seen": 1791756870.7658806,
+    "ast_hash": "5c4c647a4cc6c2b32c4f3e5a7c746e66",
+    "semantic_hash": "5c4c647a4cc6c2b32c4f3e5a7c746e66"
+  },
+  "backend-client-config.js": {
+    "mtime": 1791547263.5311823,
+    "seen": 1791756870.7658813,
+    "ast_hash": "6c4e520b3010e87926862264c2b4edd2",
+    "semantic_hash": "6c4e520b3010e87926862264c2b4edd2"
+  },
+  "backend-client.js": {
+    "mtime": 1791757244.8532176,
+    "seen": 1791757365.365469,
+    "ast_hash": "560c8e46e1375248ae4cd698b4d5d370",
+    "semantic_hash": "560c8e46e1375248ae4cd698b4d5d370"
+  },
+  "backend/package.json": {
+    "mtime": 1791711604.9203153,
+    "seen": 1791756870.7658827,
+    "ast_hash": "ab80a2266d51790d071a943a02ffa7d8",
+    "semantic_hash": "ab80a2266d51790d071a943a02ffa7d8"
+  },
+  "backend/src/server.js": {
+    "mtime": 1791756424.0594487,
+    "seen": 1791756870.7658832,
+    "ast_hash": "c06acac571ef4ef74bca1768e615fb7a",
+    "semantic_hash": "c06acac571ef4ef74bca1768e615fb7a"
+  },
+  "backend/src/services/catalog-workout-service.js": {
+    "mtime": 1791661215.8322313,
+    "seen": 1791756870.7658842,
+    "ast_hash": "44c935c7366440f95d468f0102ea4bf6",
+    "semantic_hash": "44c935c7366440f95d468f0102ea4bf6"
+  },
+  "backend/src/services/email-service.js": {
+    "mtime": 1791711662.7457354,
+    "seen": 1791756870.7658849,
+    "ast_hash": "d073099ea0a94357af3f1633370896ac",
+    "semantic_hash": "d073099ea0a94357af3f1633370896ac"
+  },
+  "backend/src/services/meal-planner-service.js": {
+    "mtime": 1791715177.4177432,
+    "seen": 1791756870.7658856,
+    "ast_hash": "53a82b4a9ee925e4a62f1ef9f6cd7675",
+    "semantic_hash": "53a82b4a9ee925e4a62f1ef9f6cd7675"
+  },
+  "backend/src/services/plan-adjustment-service.js": {
+    "mtime": 1791635579.8507764,
+    "seen": 1791756870.7658863,
+    "ast_hash": "fb1e8e6117bd66b3d299a7062f883c5d",
+    "semantic_hash": "fb1e8e6117bd66b3d299a7062f883c5d"
+  },
+  "backend/src/services/weekly-menu-service.js": {
+    "mtime": 1791716421.1514196,
+    "seen": 1791756870.765887,
+    "ast_hash": "b39cddb6249e2ea06313409768ca3101",
+    "semantic_hash": "b39cddb6249e2ea06313409768ca3101"
+  },
+  "data-model.js": {
+    "mtime": 1791546150.9407978,
+    "seen": 1791756870.7658875,
+    "ast_hash": "29ba8a076f7820006a5763c655126897",
+    "semantic_hash": "29ba8a076f7820006a5763c655126897"
+  },
+  "nutrition-tools.js": {
+    "mtime": 1791757122.9613104,
+    "seen": 1791757365.3667474,
+    "ast_hash": "6318d2908088fa4a83f0b0809c8aff73",
+    "semantic_hash": "6318d2908088fa4a83f0b0809c8aff73"
+  },
+  "product-tools.js": {
+    "mtime": 1791722380.219679,
+    "seen": 1791756870.7658887,
+    "ast_hash": "35a453eb10618042e62a6b0f17bff250",
+    "semantic_hash": "35a453eb10618042e62a6b0f17bff250"
+  },
+  "progress-insights.js": {
+    "mtime": 1791757260.3212504,
+    "seen": 1791757365.3668694,
+    "ast_hash": "0ac193e5a2755c4ca8845361e0a2cc20",
+    "semantic_hash": "0ac193e5a2755c4ca8845361e0a2cc20"
+  },
+  "progress-media.js": {
+    "mtime": 1791663885.029067,
+    "seen": 1791756870.7658904,
+    "ast_hash": "3bdd2e6d6560a97c4e4888ba00b41854",
+    "semantic_hash": "3bdd2e6d6560a97c4e4888ba00b41854"
+  },
+  "session-guard.js": {
+    "mtime": 1791757154.8670578,
+    "seen": 1791757365.3669915,
+    "ast_hash": "bc3e7fc17e739ecd2fdc1ee225c5352c",
+    "semantic_hash": "bc3e7fc17e739ecd2fdc1ee225c5352c"
+  },
+  "sw.js": {
+    "mtime": 1791757296.848206,
+    "seen": 1791757365.3669927,
+    "ast_hash": "89a5b8a65536b2a891ab72e130efcb53",
+    "semantic_hash": "89a5b8a65536b2a891ab72e130efcb53"
+  },
+  "training-tools.js": {
+    "mtime": 1791757243.9588711,
+    "seen": 1791757365.366994,
+    "ast_hash": "632833c39de65a38a37b33bfba3803a0",
+    "semantic_hash": "632833c39de65a38a37b33bfba3803a0"
+  },
+  "week2.js": {
+    "mtime": 1791757124.1071944,
+    "seen": 1791757365.3669946,
+    "ast_hash": "1ab2527b9fbbe8b57851284e9eb6a042",
+    "semantic_hash": "1ab2527b9fbbe8b57851284e9eb6a042"
+  },
+  "week4.js": {
+    "mtime": 1791635313.6099699,
+    "seen": 1791756870.7658937,
+    "ast_hash": "cdb1bfb20bb6b8b984e4e7e25d2ea913",
+    "semantic_hash": "cdb1bfb20bb6b8b984e4e7e25d2ea913"
+  }
+}

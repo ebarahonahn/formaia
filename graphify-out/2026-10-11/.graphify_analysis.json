@@ -1,0 +1,453 @@
+{
+  "communities": {
+    "0": [
+      "app_v3",
+      "app_v3_action",
+      "app_v3_admin",
+      "app_v3_auth",
+      "app_v3_bind",
+      "app_v3_buildplan",
+      "app_v3_compactdate",
+      "app_v3_completedweekcard",
+      "app_v3_completetoday",
+      "app_v3_current",
+      "app_v3_cyclecompleted",
+      "app_v3_cyclesessions",
+      "app_v3_dashboard",
+      "app_v3_defaults",
+      "app_v3_durationminutes",
+      "app_v3_editprofile",
+      "app_v3_exercisechartbody",
+      "app_v3_fields",
+      "app_v3_isodate",
+      "app_v3_landing",
+      "app_v3_localdata",
+      "app_v3_nav",
+      "app_v3_nextpendingworkout",
+      "app_v3_nutrition",
+      "app_v3_onboarding",
+      "app_v3_pausetimer",
+      "app_v3_plan",
+      "app_v3_planhistory",
+      "app_v3_planhistorydate",
+      "app_v3_plannedsets",
+      "app_v3_plusdays",
+      "app_v3_profile",
+      "app_v3_progress",
+      "app_v3_progressdate",
+      "app_v3_progresshistory",
+      "app_v3_record",
+      "app_v3_render",
+      "app_v3_rendertimer",
+      "app_v3_resettimer",
+      "app_v3_root",
+      "app_v3_shell",
+      "app_v3_shortname",
+      "app_v3_starttimer",
+      "app_v3_state",
+      "app_v3_timerelapsed",
+      "app_v3_timertext",
+      "app_v3_toast",
+      "app_v3_todayoverride",
+      "app_v3_todayworkout",
+      "app_v3_trainingcharts",
+      "app_v3_trainingdays",
+      "app_v3_trainingstreak",
+      "app_v3_weeklylogs",
+      "app_v3_workout"
+    ],
+    "1": [
+      "app_v2",
+      "app_v2_act",
+      "app_v2_add",
+      "app_v2_auth",
+      "app_v2_bind",
+      "app_v2_dashboard",
+      "app_v2_day",
+      "app_v2_first",
+      "app_v2_fmt",
+      "app_v2_landing",
+      "app_v2_logged",
+      "app_v2_me",
+      "app_v2_navbar",
+      "app_v2_nutrition",
+      "app_v2_onboarding",
+      "app_v2_pl",
+      "app_v2_planai",
+      "app_v2_profile",
+      "app_v2_progress",
+      "app_v2_record",
+      "app_v2_render",
+      "app_v2_root",
+      "app_v2_shell",
+      "app_v2_st",
+      "app_v2_store",
+      "app_v2_streak",
+      "app_v2_toast",
+      "app_v2_vals",
+      "app_v2_w",
+      "app_v2_week",
+      "app_v2_workout"
+    ],
+    "2": [
+      "backend_package",
+      "backend_package_dependencies",
+      "backend_package_dependencies_mysql2",
+      "backend_package_dependencies_nodemailer",
+      "backend_package_dependencies_undici",
+      "backend_package_name",
+      "backend_package_private",
+      "backend_package_scripts",
+      "backend_package_scripts_dev",
+      "backend_package_scripts_start",
+      "backend_package_type",
+      "backend_package_version",
+      "backend_src_services_email_service",
+      "backend_src_services_email_service_configured",
+      "backend_src_services_email_service_emailenabled",
+      "backend_src_services_email_service_mailer",
+      "backend_src_services_email_service_message",
+      "backend_src_services_email_service_sendpasswordresetemail",
+      "backend_src_services_email_service_sendverificationemail",
+      "ref_mysql2",
+      "ref_nodemailer",
+      "ref_undici"
+    ],
+    "3": [
+      "app",
+      "app_action",
+      "app_app",
+      "app_bind",
+      "app_dashboard",
+      "app_datelabel",
+      "app_first",
+      "app_landing",
+      "app_layout",
+      "app_navigation",
+      "app_nutrition",
+      "app_onboarding",
+      "app_planservice",
+      "app_profilestore",
+      "app_progress",
+      "app_render",
+      "app_state",
+      "app_toast",
+      "app_workout"
+    ],
+    "4": [
+      "backend_src_server_appurl",
+      "backend_src_server_asboolean",
+      "backend_src_server_body",
+      "backend_src_server_catalogweeklymeals",
+      "backend_src_server_catalogworkouts",
+      "backend_src_server_compatibleequipment",
+      "backend_src_server_elapsedinlog",
+      "backend_src_server_injuryunsafe",
+      "backend_src_server_normalizedtext",
+      "backend_src_server_publicuser",
+      "backend_src_server_requireadmin",
+      "backend_src_server_routes",
+      "backend_src_server_send",
+      "backend_src_server_validtime",
+      "backend_src_server_workoutlogwithelapsed",
+      "backend_src_services_plan_adjustment_service_baseplanadjustment",
+      "backend_src_services_weekly_menu_service_nutritionfrommenu"
+    ],
+    "5": [
+      "backend_src_server",
+      "backend_src_server_alloweddiettags",
+      "backend_src_server_auth",
+      "backend_src_server_base64",
+      "backend_src_server_env",
+      "backend_src_server_passwordhash",
+      "backend_src_server_passwordvalid",
+      "backend_src_server_pool",
+      "backend_src_server_required",
+      "backend_src_server_scrypt",
+      "backend_src_server_sign",
+      "backend_src_server_verify",
+      "ref_node_crypto",
+      "ref_node_fs",
+      "ref_node_http",
+      "ref_node_util"
+    ],
+    "6": [
+      "backend_src_services_catalog_workout_service",
+      "backend_src_services_catalog_workout_service_adjustedprescription",
+      "backend_src_services_catalog_workout_service_buildcatalogworkouts",
+      "backend_src_services_catalog_workout_service_clamp",
+      "backend_src_services_catalog_workout_service_exercisecount",
+      "backend_src_services_catalog_workout_service_fitsequipment",
+      "backend_src_services_catalog_workout_service_focusesforsession",
+      "backend_src_services_catalog_workout_service_formatrest",
+      "backend_src_services_catalog_workout_service_goallabel",
+      "backend_src_services_catalog_workout_service_goalrestdelta",
+      "backend_src_services_catalog_workout_service_goalsetdelta",
+      "backend_src_services_catalog_workout_service_normalized",
+      "backend_src_services_catalog_workout_service_readjson",
+      "backend_src_services_catalog_workout_service_splits"
+    ],
+    "7": [
+      "backend_src_services_weekly_menu_service",
+      "backend_src_services_weekly_menu_service_avoidedfoods",
+      "backend_src_services_weekly_menu_service_avoidsitem",
+      "backend_src_services_weekly_menu_service_buildweeklymenu",
+      "backend_src_services_weekly_menu_service_days",
+      "backend_src_services_weekly_menu_service_estimatedcalories",
+      "backend_src_services_weekly_menu_service_fitsdiet",
+      "backend_src_services_weekly_menu_service_goalscore",
+      "backend_src_services_weekly_menu_service_normalized",
+      "backend_src_services_weekly_menu_service_readjson",
+      "backend_src_services_weekly_menu_service_stablehash",
+      "backend_src_services_weekly_menu_service_types"
+    ],
+    "8": [
+      "backend_src_server_actiontoken",
+      "backend_src_server_createsession",
+      "backend_src_server_issueactiontoken",
+      "backend_src_server_saveexercisemedia",
+      "backend_src_server_savephoto",
+      "backend_src_server_storeplan",
+      "backend_src_server_tokenhash",
+      "backend_src_server_uid"
+    ],
+    "9": [
+      "backend_src_server_catalogexercise",
+      "backend_src_server_catalogfood",
+      "backend_src_server_catalogmeal",
+      "backend_src_server_safedecimal",
+      "backend_src_server_safeinteger",
+      "backend_src_server_savesetlog",
+      "backend_src_server_setpayload",
+      "backend_src_server_textlist"
+    ],
+    "10": [
+      "week2",
+      "week2_adddashboardnudge",
+      "week2_addprogresshistory",
+      "week2_addrecipeindexes",
+      "week2_addworkoutchecks",
+      "week2_enhance",
+      "week2_showrecipe"
+    ],
+    "11": [
+      "backend_src_server_activeplan",
+      "backend_src_server_currentmonthkey",
+      "backend_src_server_dateonly",
+      "backend_src_server_progressinsights",
+      "backend_src_server_weeklycontext",
+      "backend_src_services_meal_planner_service_recipesubstitutions"
+    ],
+    "12": [
+      "backend_src_services_meal_planner_service",
+      "backend_src_services_meal_planner_service_clean",
+      "backend_src_services_meal_planner_service_localequivalences",
+      "backend_src_services_meal_planner_service_portions",
+      "backend_src_services_meal_planner_service_roundup",
+      "backend_src_services_meal_planner_service_shoppinglist"
+    ],
+    "13": [
+      "backend_src_services_plan_adjustment_service",
+      "backend_src_services_plan_adjustment_service_cautiousterms",
+      "backend_src_services_plan_adjustment_service_deriveweeklyadjustment",
+      "backend_src_services_plan_adjustment_service_energyscore",
+      "backend_src_services_plan_adjustment_service_goalcopy",
+      "backend_src_services_plan_adjustment_service_normalize"
+    ],
+    "14": [
+      "backend_src_server_catalogexercisetuple",
+      "backend_src_server_exercisehistory",
+      "backend_src_server_exerciselabel",
+      "backend_src_server_jsonvalue",
+      "backend_src_server_personalrecords"
+    ],
+    "15": [
+      "sw",
+      "sw_assets"
+    ],
+    "16": [
+      "week4",
+      "week4_addreviewbutton"
+    ],
+    "17": [
+      "account_security"
+    ],
+    "18": [
+      "admin_confirm_dialog_style"
+    ],
+    "19": [
+      "admin_panel"
+    ],
+    "20": [
+      "backend_client"
+    ],
+    "21": [
+      "backend_client_config"
+    ],
+    "22": [
+      "data_model"
+    ],
+    "23": [
+      "nutrition_tools"
+    ],
+    "24": [
+      "product_tools"
+    ],
+    "25": [
+      "progress_insights"
+    ],
+    "26": [
+      "progress_media"
+    ],
+    "27": [
+      "session_guard"
+    ],
+    "28": [
+      "training_tools"
+    ]
+  },
+  "cohesion": {
+    "0": 0.11809923130677848,
+    "1": 0.2,
+    "2": 0.11688311688311688,
+    "3": 0.2222222222222222,
+    "4": 0.1323529411764706,
+    "5": 0.175,
+    "6": 0.26373626373626374,
+    "7": 0.3484848484848485,
+    "8": 0.2857142857142857,
+    "9": 0.25,
+    "10": 0.47619047619047616,
+    "11": 0.3333333333333333,
+    "12": 0.4666666666666667,
+    "13": 0.4,
+    "14": 0.4,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0
+  },
+  "gods": [
+    {
+      "id": "backend_src_server_routes",
+      "label": "routes()",
+      "degree": 45
+    },
+    {
+      "id": "app_v3_current",
+      "label": "current()",
+      "degree": 20
+    },
+    {
+      "id": "app_v3_render",
+      "label": "render()",
+      "degree": 18
+    },
+    {
+      "id": "app_v3_shell",
+      "label": "shell()",
+      "degree": 17
+    },
+    {
+      "id": "app_v3_action",
+      "label": "action()",
+      "degree": 16
+    },
+    {
+      "id": "app_v2_me",
+      "label": "me()",
+      "degree": 14
+    },
+    {
+      "id": "app_v2_render",
+      "label": "render()",
+      "degree": 14
+    },
+    {
+      "id": "app_v2_shell",
+      "label": "shell()",
+      "degree": 13
+    },
+    {
+      "id": "app_v3_dashboard",
+      "label": "dashboard()",
+      "degree": 12
+    },
+    {
+      "id": "app_v3_workout",
+      "label": "workout()",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "routes()",
+      "target": "emailEnabled()",
+      "source_files": [
+        "backend/src/server.js",
+        "backend/src/services/email-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "routes()",
+      "target": "sendPasswordResetEmail()",
+      "source_files": [
+        "backend/src/server.js",
+        "backend/src/services/email-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "routes()",
+      "target": "sendVerificationEmail()",
+      "source_files": [
+        "backend/src/server.js",
+        "backend/src/services/email-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "routes()",
+      "target": "shoppingList()",
+      "source_files": [
+        "backend/src/server.js",
+        "backend/src/services/meal-planner-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "routes()",
+      "target": "deriveWeeklyAdjustment()",
+      "source_files": [
+        "backend/src/server.js",
+        "backend/src/services/plan-adjustment-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

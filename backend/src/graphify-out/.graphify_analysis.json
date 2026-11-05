@@ -1,0 +1,214 @@
+{
+  "communities": {
+    "0": [
+      "server_catalogworkouts",
+      "services_catalog_workout_service",
+      "services_catalog_workout_service_adjustedprescription",
+      "services_catalog_workout_service_buildcatalogworkouts",
+      "services_catalog_workout_service_clamp",
+      "services_catalog_workout_service_exercisecount",
+      "services_catalog_workout_service_focusesforsession",
+      "services_catalog_workout_service_formatrest",
+      "services_catalog_workout_service_goallabel",
+      "services_catalog_workout_service_goalrestdelta",
+      "services_catalog_workout_service_goalsetdelta",
+      "services_catalog_workout_service_readjson",
+      "services_catalog_workout_service_splits"
+    ],
+    "1": [
+      "ref_mysql2",
+      "ref_node_crypto",
+      "ref_node_fs",
+      "ref_node_http",
+      "ref_node_util",
+      "server",
+      "server_dateonly",
+      "server_pool",
+      "server_required",
+      "server_weeklycontext"
+    ],
+    "2": [
+      "server_activeplan",
+      "server_body",
+      "server_catalogweeklymeals",
+      "server_publicuser",
+      "server_routes",
+      "server_send",
+      "server_storeplan",
+      "server_uid",
+      "services_weekly_menu_service_nutritionfrommenu"
+    ],
+    "3": [
+      "services_weekly_menu_service",
+      "services_weekly_menu_service_avoidedfoods",
+      "services_weekly_menu_service_avoidsitem",
+      "services_weekly_menu_service_buildweeklymenu",
+      "services_weekly_menu_service_days",
+      "services_weekly_menu_service_fitsdiet",
+      "services_weekly_menu_service_normalized",
+      "services_weekly_menu_service_readjson",
+      "services_weekly_menu_service_types"
+    ],
+    "4": [
+      "services_plan_adjustment_service",
+      "services_plan_adjustment_service_baseplanadjustment",
+      "services_plan_adjustment_service_cautiousterms",
+      "services_plan_adjustment_service_deriveweeklyadjustment",
+      "services_plan_adjustment_service_energyscore",
+      "services_plan_adjustment_service_goalcopy",
+      "services_plan_adjustment_service_normalize"
+    ],
+    "5": [
+      "server_auth",
+      "server_base64",
+      "server_env",
+      "server_sign",
+      "server_verify"
+    ],
+    "6": [
+      "server_passwordhash",
+      "server_passwordvalid",
+      "server_scrypt"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2692307692307692,
+    "1": 0.2222222222222222,
+    "2": 0.25,
+    "3": 0.4722222222222222,
+    "4": 0.3333333333333333,
+    "5": 0.4,
+    "6": 0.6666666666666666
+  },
+  "gods": [
+    {
+      "id": "server_routes",
+      "label": "routes()",
+      "degree": 17
+    },
+    {
+      "id": "services_catalog_workout_service_buildcatalogworkouts",
+      "label": "buildCatalogWorkouts()",
+      "degree": 7
+    },
+    {
+      "id": "services_weekly_menu_service_buildweeklymenu",
+      "label": "buildWeeklyMenu()",
+      "degree": 7
+    },
+    {
+      "id": "services_catalog_workout_service_adjustedprescription",
+      "label": "adjustedPrescription()",
+      "degree": 6
+    },
+    {
+      "id": "services_weekly_menu_service_avoidsitem",
+      "label": "avoidsItem()",
+      "degree": 4
+    },
+    {
+      "id": "services_weekly_menu_service_fitsdiet",
+      "label": "fitsDiet()",
+      "degree": 4
+    },
+    {
+      "id": "services_weekly_menu_service_normalized",
+      "label": "normalized()",
+      "degree": 4
+    },
+    {
+      "id": "services_weekly_menu_service_readjson",
+      "label": "readJson()",
+      "degree": 4
+    },
+    {
+      "id": "services_plan_adjustment_service_deriveweeklyadjustment",
+      "label": "deriveWeeklyAdjustment()",
+      "degree": 4
+    },
+    {
+      "id": "services_plan_adjustment_service_normalize",
+      "label": "normalize()",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "catalogWeeklyMeals()",
+      "target": "buildWeeklyMenu()",
+      "source_files": [
+        "server.js",
+        "services/weekly-menu-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "routes()",
+      "target": "basePlanAdjustment()",
+      "source_files": [
+        "server.js",
+        "services/plan-adjustment-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "routes()",
+      "target": "deriveWeeklyAdjustment()",
+      "source_files": [
+        "server.js",
+        "services/plan-adjustment-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "catalogWorkouts()",
+      "target": "buildCatalogWorkouts()",
+      "source_files": [
+        "server.js",
+        "services/catalog-workout-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "routes()",
+      "target": "nutritionFromMenu()",
+      "source_files": [
+        "server.js",
+        "services/weekly-menu-service.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `buildCatalogWorkouts()` connect `catalog-workout-service.js` to `server.js`?",
+      "why": "High betweenness centrality (0.066) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `SPLITS`, `pool`, `required` to the rest of the system?",
+      "why": "8 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `buildWeeklyMenu()` connect `weekly-menu-service.js` to `server.js`, `routes`?",
+      "why": "High betweenness centrality (0.066) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `routes()` connect `routes` to `catalog-workout-service.js`, `server.js`, `plan-adjustment-service.js`, `sign`, `passwordHash`?",
+      "why": "High betweenness centrality (0.043) - this node is a cross-community bridge."
+    }
+  ]
+}

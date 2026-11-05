@@ -1,0 +1,40 @@
+/* FormaIA design foundations — responsive, accessible and dependency-free. */
+:root {
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 18px;
+  --space-4: 26px;
+  --surface-soft: rgba(255, 253, 248, .78);
+  --focus-ring: 0 0 0 3px rgba(130, 168, 43, .34);
+}
+
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.topbar { position: relative; z-index: 2; }
+.card, .form-card, .meal, .exercise { transition: transform .2s ease, box-shadow .2s ease; }
+@media (hover: hover) {
+  .card:hover, .meal:hover, .exercise:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(20, 61, 52, .08); }
+}
+
+.eyebrow { display: inline-flex; align-items: center; gap: 7px; }
+.eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--coral); }
+.page-intro h2, .detail-head h1 { text-wrap: balance; }
+.subhead { text-wrap: pretty; }
+
+@media (max-width: 700px) {
+  .card, .form-card { border-radius: var(--radius-md); }
+  .workout-card, .target-card { min-height: 230px; }
+  .exercise { gap: 10px; padding: 15px 13px; }
+  .exercise-time { white-space: nowrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

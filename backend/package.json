@@ -1,0 +1,17 @@
+{
+  "name": "formaia-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "mysql2": "^3.11.5",
+    "nodemailer": "^10.1.0",
+    "qrcode": "^1.5.4",
+    "undici": "^7.0.0"
+  }
+}

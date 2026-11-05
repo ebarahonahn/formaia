@@ -1,0 +1,2 @@
+externalId,amountHnl,paymentCode,email,reference,receivedOn,receiptNumber,notes
+TEST-TRANSFER-20261105-001,599.00,M-E33DB292389E,usuario5@algo.com,TRF-PRUEBA-001,2026-11-05,REC-PRUEBA-001,Prueba de importacion con datos de la base de datos.
